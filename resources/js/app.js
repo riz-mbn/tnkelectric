@@ -10,8 +10,11 @@
         },
 
 
-		utils: function(){
+		utils: function(){         
             
+
+            document.body.classList.remove("no-js");
+
             $('.navbar .btn-user').click(function(){
                 $('#header').toggleClass('show-account');
                 $('#header').removeClass('show-classes');

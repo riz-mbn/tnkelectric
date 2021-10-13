@@ -1,4 +1,156 @@
 
-.sec_test {
-    
+
+/* HERO STYLE 3 */
+.hero-s3 {
+    background: #000;
+	min-height: 100vh;
+	position: relative;
+    z-index: -1;
+	
+	.hero-caption {
+		padding: 250px 0 50px;
+		position: relative;
+		color:$color-white;
+		min-height: 500px;
+		z-index: 2;
+
+		h1{
+			letter-spacing: -0.01em;
+			line-height: 70px;
+			margin-bottom: 5px;
+
+			opacity: 1;
+			background-color: transparent;
+			transition: opacity 2s ease-in;
+		}
+
+		.section_title {
+			margin-bottom: 50px;
+		}
+
+		h5 {
+			line-height: 1.4;
+		}
+		h6 {
+			font-weight: 400;
+		}
+		p {
+			font-size: 29px;
+			line-height: 45px;
+			margin-bottom: 60px;
+		}
+		figure {
+			margin-bottom: 30px;
+		}
+		.grid-x {
+			min-height: calc(100vh - 350px);
+		}
+
+		.button {			
+			letter-spacing: 0.11em;
+		}
+	}
+
+	.hero-logos {
+		position: relative;
+		padding: 15px 0; 
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		z-index: 2;
+	}
+
+	@include media(max-width, 1280px) {
+		.hero-caption {
+			font-size: 18px;
+			h1 {
+				font-size: 45px;
+			}
+		}
+
+		.hero-logos {
+			ul {
+				li {
+					padding: 10px 30px;;
+				}
+			}
+		}
+	}
+
+	@include media(max-width, 1023px) {
+		padding: 0;
+
+		.hero-caption {
+			height: auto;
+		}
+	}
+	
+	@include media(max-width, 639px) {
+		.hero-caption {
+			font-size: 16px;
+			h1 {
+				font-size: 32px;
+			}
+		}
+
+		.hero-logos {
+			ul {
+				li {
+					max-width: calc(33% - 4px);
+				}
+			}
+		}
+	}
+	
+	@include media(max-width, 480px) {
+		.hero-logos {
+			ul {
+				li {
+					padding:10px;
+				}
+			}
+		}
+	}
+}
+
+
+.section_home_2 {
+	position:relative;
+	padding: 84px 0 0;
+
+	h2 {
+		color: $color-black;
+	}
+
+	p {
+		margin-bottom: 52px;		
+	}
+}
+
+.section_home_3 {
+	position: relative;
+	min-height: 1010px;
+	padding: 266px 0 181px;
+
+	.section_header  {
+		max-width: 1230px;
+		margin-bottom: 70px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+		
+	.cell {
+
+		position: relative;
+	}
+
+	.button {
+		position: absolute;
+		bottom: -40px;
+		left: 50px;
+	}
+
+	@include media (max-width,1440px){
+		padding: 60px 0;
+	}
 }

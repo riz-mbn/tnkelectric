@@ -64,6 +64,7 @@
 
 
 // Base Styles
+@import "./base/animations";
 @import "./base/fonts";
 @import "./base/typography";
 @import "./base/utilities";
@@ -75,7 +76,13 @@
 
 // PAGES
 @import "./pages/home";
+@import "./pages/inner";
 
+// SECTIONS
+@import "./sections/header";
+@import "./sections/content";
+@import "./sections/footer";
+@import "./sections/sidebar";
 
 
 //PLUGINS

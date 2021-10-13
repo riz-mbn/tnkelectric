@@ -8,8 +8,9 @@
     margin-bottom: 20px;
     line-height: 28px;
     transition:all 0.5s ease;
-    border-radius: 3px;
+    border-radius: 0;
     min-width: 240px;
+    letter-spacing: 0.11em;
 
     &:hover {
         color: $color-white;
@@ -339,7 +340,6 @@
     }
 
     .buttons & {
-        margin-left: 25px;
         margin-right: 25px;
     }
 
