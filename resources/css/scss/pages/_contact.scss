@@ -1,0 +1,45 @@
+.section_page_header {
+    padding: 88px;
+    position: relative;
+
+    h1 {
+        color: $color-white;
+    }
+}
+
+.contact_info {
+    padding: 140px 0 80px;
+
+    .contact_item {
+        display: table-cell;
+
+        .contact_email {
+            margin-top: 0;
+            padding-left: 28px;
+
+        }
+
+        .media-left,
+        .media-right, 
+        .media-body {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .media-left {
+            display: table-cell;
+            vertical-align: top;
+            padding-right: 10px;
+            padding-left: 2px;
+            
+        }
+
+        .media-body {
+            width: auto;
+        }
+        .media-heading {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+    }
+}

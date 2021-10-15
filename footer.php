@@ -6,13 +6,13 @@
         <div class="grid-container">
             <div class="foottop">
                 <div class="grid-x">
-                    <div class="cell large-4">
+                    <div class="cell xlarge-4 large-4 medium-12 foot_logo">
                         <a class="logo" href="<?php echo get_home_url(); ?>">
                             <figure><img src="<?php echo MBN_ASSETS_URI ?>/img/logo.svg" alt="" width="359" height="56" ></figure>
                         </a>
                         <a href="#" class="button primary large hollow">Get a no hassle free analysis</a>
                     </div>
-                    <div class="cell large-4 information">
+                    <div class="cell xlarge-4 large-4 medium-6 information">
                         <div class="information_1">
                             <div class="call_us">
                                 <h4 class="col-title">Contact Us</h4>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="cell large-3 large-offset-1 footer_menu">
+                    <div class="cell xlarge-3 xlarge-offset-1 large-4 medium-6 footer_menu">
                         <div class="menu_1">
                             <h5>Services</h5>
                             <ul class="services_menu">

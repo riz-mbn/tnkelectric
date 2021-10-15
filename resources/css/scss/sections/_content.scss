@@ -7,3 +7,14 @@
         padding-right: 30px;
     }
 }
+
+section {
+    
+	@include media(max-width, 1440px){
+		padding: 60px 0 !important;
+	}
+    
+	@include media(max-width, 1023px){
+		padding: 40px 0!important;
+	}
+}

@@ -288,8 +288,7 @@ h2.section_title {
 }
 
 p.subtitle {
-	color: $color-black;
-	font-size: 31px;
+	color: $color-black; 
 	line-height: 1.3;
 }
 
@@ -301,12 +300,14 @@ p.subtitle {
 .block_text {
 	background: url(../img/icon/icn-block-text.svg) no-repeat 0 top;
     border-left-width: 0;
-	font-weight: 300;
-    color: $color-grey;
-    font-size: 31px;
-    line-height: 1.3;
     margin: 0 0 50px;
     padding: 0 0 0 50px;
+	
+	h3 {
+		font-weight: 300;
+		color: $color-grey;
+		line-height: 1.3;
+	}
 }
 
 figure {
@@ -323,6 +324,18 @@ figure {
 			width: 100%;
 			object-fit:cover;
 		}
+	}
+
+	&.penta {
+		position:relative;
+
+		&:before {
+			content: url('../img/icon/icn-corner.svg');
+			position: absolute;
+			left: 0;
+			top:0;
+		}
+
 	}
 
 }
@@ -345,4 +358,107 @@ figure {
 		color: $color-grey;
 		font-weight: 400;
 	}
+}
+
+
+.image_boxes {
+
+	//margin: 0 -33px;
+	
+	.cell {
+
+		&:not(:last-child) {
+			.text-wrap {
+				position: relative;
+				
+				&:after {
+					content: url(../img/icon/icn-separator.svg);
+					position: absolute;
+					right: -45px;
+    				top: 0;
+				}
+
+			}
+		}
+	}
+
+	.image_box {
+		padding: 0 33px;
+
+		figure {
+			margin-bottom: 56px;
+		}
+
+		h3 {
+			margin-bottom: 30px;
+			color: $color-primary;
+			font-weight: 600;
+		}
+
+		p {
+			font-size: 22px;
+		} 
+	}
+	
+	@include media(max-width, 1023px) {
+		.image_box {				
+			padding: 0 0 30px !important;
+			
+
+			figure {
+				margin-bottom: 20px;
+			}
+
+			h3 {
+				margin-bottom: 0;
+			}
+
+			p {
+				font-size: 16px;
+			} 
+
+		}
+		.cell {
+			&:not(:last-child){
+				.text-wrap {
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+.field_type-star_rating_field ul.star-rating {
+	margin: 0 auto;
+
+	li {	
+		margin-right: 10px !important;
+		
+		i {
+			&.fa-star {
+				font-size: 20px;
+			
+				&:before {
+					color: #FFC107 !important;
+				}
+			}
+		}
+
+		&:last-child {
+			margin-right: 0 !important;
+		}
+	}
+}
+
+.typing_animate {
+	color: $color-lblue;
+
+	span:after { 
+		content: "_";
+		color: $color-lblue;
+		animation: blinking 1s infinite;
+	  } 
 }

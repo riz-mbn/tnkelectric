@@ -19,8 +19,12 @@
     h4 {
         color: $color-primary;
         font-family: $heading-font-family;
-        padding: 8px 0;
         margin: 0;
+    }
+    
+    .button {
+        border-color: $color-dblue;
+        color:  $color-dblue;
     }
 
     .foottop {
@@ -86,7 +90,6 @@
     }
 
     .foot_logo {
-        display: flex;
         a {
             display: inline-block;
             margin:0 0 40px;
@@ -179,15 +182,82 @@
     .designby {
     }
 
-	@include media(max-width, 767px) {   
+	@include media(max-width, 1440px) {  
+        padding: 40px 0;
+    }
+
+    @include media(max-width, 1024px) {  
+
+        .foottop {
+            .information {
+                display: block;
+                padding-left: 50px;
+
+                .information_1 {
+                    margin-right: 0;
+
+                }
+                .call_us, .find_us, .email_us, .follow_us {
+                    margin-bottom: 20px;
+                }
+            } 
+
+        }
+
+        .foot_logo { 
+            margin-bottom: 40px;
+
+            a {
+                margin: 0 auto;
+                text-align: center;
+                width: 100%;
+
+            }
+        }
         
     }   
+
+    
+
+    @include media(max-width, 1023px) {
+
+        .foot_logo {
+            justify-content: normal;
+        }
+
+        .foottop {
+            .information {
+                display: flex;
+                justify-content: normal;
+                padding-left: 0;
+
+                .information_1 {
+                    margin-right: 60px;
+
+                }
+            } 
+
+        }
+    }
     
 	@include media(max-width, 767px) {   
         text-align: center;
 
         .foottop {
             padding-bottom: 0;
+            .information {
+                display: block;
+
+                .information_1 {
+                    margin-right: 0;
+
+                }
+            }
+        }
+
+        .footer_menu {
+            display: block !important;
+            margin-top: 20px;
         }
 
         .foot_logo {
@@ -201,6 +271,14 @@
                 margin-bottom: 15px;
                 max-width: none;
             }
+
+            .button {
+                font-size: 14px;
+            }
+        }
+
+        .social_icons {
+            justify-content: center;
         }
 
         .foot_contact {
@@ -223,4 +301,12 @@
             text-align: center;
         }
     }
+    
+    
+	@include media(max-width, 425px) { 
+          .footbot {
+            flex-direction: column;
+          }
+    }
+
 }

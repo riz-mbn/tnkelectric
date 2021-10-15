@@ -11,6 +11,10 @@ body {
         &.admin-bar {
 			.hsnav-s6 {
 				top: 46px !important;
+
+				&.is-stuck {
+					top: 0 !important;
+				}
 			}       
             
         }
@@ -66,6 +70,12 @@ header {
 		animation: 1s ease-in 0s 1 slideInFromTop;
 		background: $color-black;
 		max-width: none !important;
+
+			
+		.grid-container {
+			max-width: 100%;
+			padding: 0 36px;
+		}
 		
 		&.sticky {
 			position: absolute;
@@ -93,8 +103,8 @@ header {
 
 			.logo, .navlogo {
 				float: left;
-				margin-left: 50px;
-				margin-top: 14px;
+				// margin-left: 50px;
+				// margin-top: 14px;
 				
 				height: 50px;
 				overflow: hidden;
@@ -199,7 +209,6 @@ header {
 				height: 50px; 
 				position: absolute;  
 				right: 20px; 
-				top: 14px; 
 				font-size: 0; 
 				cursor: pointer; 
 				display: block;
@@ -248,7 +257,7 @@ header {
 			@include media(max-width, 1366px) {
 				
 				.logo, .navlogo {
-					margin-left: 30px;
+					//margin-left: 30px;
 				}
 
 				.navmenu {
@@ -278,6 +287,10 @@ header {
 					overflow: auto;
 					padding: 30px;
 
+					.button {
+						width: 100%;
+					}
+
 					ul {
 						display: block;
 						margin: 0;
@@ -295,7 +308,7 @@ header {
 								font-weight: 400; 
 								color: $color-white;
 								position: relative;
-								letter-spacing: -0.02em;
+								padding: 0 0 10px;
 
 								&:before {
 									position: absolute; 
@@ -305,15 +318,19 @@ header {
 								}
 							}
 							ul {
-								margin: 0;
+								margin-top: 10px;
+								margin-bottom: 50px;
 								padding: 0;
-								background:$color-white;
+								padding-top: 20px;
+								border-top: 1px solid #fff;
+
 								li {
 									a {
-										padding-left: 45px;
+										font-weight: 300;
 										text-transform: none; 
 										text-align: left; 
-										color: lighten($color-black, 44%); 
+										color: $color-white; 
+										font-size: 17px
 									}
 								}
 							}
@@ -321,13 +338,14 @@ header {
 					}
 
     				.submenu-toggle {
-    					background:lighten($color-black, 90%)  url(../img/icn-plus.svg) no-repeat 17px center / 15px; 
+    					background: transparent url(../img/icon/icn-chev-down.svg) no-repeat 17px center / 15px; 
     					width:55px; 
     					height: 47px; 
     					right: 0;
+						transition: all 0.3s ease;
 
     					&[aria-expanded="true"] {
-    						background-image: url(../img/icn-close-r.svg); 
+							transform: rotate(-90deg);
     					}
     					&:after {
     						content: ""; border:0;
@@ -343,7 +361,7 @@ header {
 			}
 		}
 		
-		@at-root header.show-menu .hsnav-s6 .navbar {
+		@at-root header.show-menu .hsnav-s6 {
 			background: #262626;
 		}
 
@@ -352,11 +370,20 @@ header {
 	@include media (max-width, 1023px){
 		.hsnav-s6 {
 
+			&.is-stuck {
+				.navbar {
+					min-height: 84px !important;
+				}	
+
+			}
+
 			.navbar {
 				min-height: 100px !important;
 
 				.logo {
 					width: 200px;
+					height: auto;
+					margin-top: 0;
 				}
 			}
 
@@ -365,6 +392,11 @@ header {
 	
 	@include media (max-width, 1424px){
 		.hsnav-s6 {
+
+					
+			.grid-container {
+				max-width: 1410px;
+			}
 
 			.navbar {
 				
@@ -385,7 +417,7 @@ header {
 				
 				.navmenu {
 					a {
-						padding: 18px 10px;
+						padding: 18px 8px;
 					}
 				}
 			}

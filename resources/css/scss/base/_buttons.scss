@@ -39,12 +39,12 @@
         
     &.hollow {
         background: none;
-        color: $color-primary;
-        border-color: $color-primary;
+        color: $color-dblue;
+        border-color: $color-dblue;
 
         &:hover {
-            background: $color-primary;
-            border-color: $color-primary;
+            background: $color-dblue;
+            border-color: $color-dblue;
             color: $color-white;
 
             i.dark {
@@ -54,22 +54,22 @@
     }
 
     &.primary {
-        background: $color-primary;
+        background: $color-dblue;
         color: $color-white;
 
         &:hover {
             color: $color-white;
-            background: lighten($color-primary, 10%);
+            background: lighten($color-dblue, 10%);
         }
         
         &.hollow {
             background: none;
-            color: $color-primary;
-            border-color: $color-primary;
+            color: $color-dblue;
+            border-color: $color-dblue;
     
             &:hover {
-                background: $color-primary;
-                border-color: $color-primary;
+                background: $color-dblue;
+                border-color: $color-dblue;
                 color: $color-white;
 
                 i.dark {
@@ -82,11 +82,15 @@
     &.light {
         background: $color-white;
         border-color: $color-white;
-        color: $color-primary;
+        color: $color-dblue;
+
+        .large {
+            padding: 20px 30px;
+        }
 
         &:hover {
             background: darken($color-white, 7%);
-            color: $color-primary;
+            color: $color-dblue;
         }
         
         &.hollow {
@@ -96,7 +100,7 @@
 
             &:hover {
                 background: $color-light;
-                color: $color-primary;    
+                color: $color-dblue;    
                 border-color: $color-light;            
             }
         }
@@ -206,8 +210,8 @@
         color: $color-white;
 
         &:hover {
-            background: lighten($color-primary, 10%);
-            border-color: lighten($color-primary, 10%);
+            background: lighten($color-dblue, 10%);
+            border-color: lighten($color-dblue, 10%);
             color: $color-white;
         }
         
@@ -279,7 +283,7 @@
         }
 
         &:hover {
-            color:$color-primary;
+            color:$color-dblue;
         }
 
         @include media(max-width, 1023px) {
@@ -305,7 +309,7 @@
     }
 
     &.large {   
-        padding: 18px 40px;
+        padding: 20px 40px;
         font-size: 20px;
     }
 
@@ -446,6 +450,7 @@ a.btn-link {
     color: lighten($color-black, 7%);
     display: inline-block;
     vertical-align: middle;
+    border-bottom: 1px solid $color-white;
     
     &:hover {
         color: lighten($color-black, 20%);
