@@ -57,6 +57,19 @@
 	}
 }
 
+h2.section_title {
+	span {
+		display: inline;
+	}
+
+	@include media (max-width, 1023px){
+			
+		span {
+			display: block;
+		}
+	}
+}
+
 //Circle list inside copy
 .circle-list {
 	margin:0 0 30px;
@@ -362,10 +375,13 @@ figure {
 
 
 .image_boxes {
-
-	//margin: 0 -33px;
+	display: flex;
+    flex-wrap: wrap;
+	margin: 0 -30px;
 	
-	.cell {
+	.image_box {
+		width: 33.33%;
+		padding: 0 33px;
 
 		&:not(:last-child) {
 			.text-wrap {
@@ -380,10 +396,6 @@ figure {
 
 			}
 		}
-	}
-
-	.image_box {
-		padding: 0 33px;
 
 		figure {
 			margin-bottom: 56px;
@@ -401,9 +413,12 @@ figure {
 	}
 	
 	@include media(max-width, 1023px) {
+		
+		justify-content: center;
+
 		.image_box {				
-			padding: 0 0 30px !important;
-			
+			padding: 0 33px 30px !important;
+			width: 50%;
 
 			figure {
 				margin-bottom: 20px;
@@ -417,8 +432,33 @@ figure {
 				font-size: 16px;
 			} 
 
+			&:not(:last-child) {
+				.text-wrap {
+					
+					&:after {
+						top: -150px;
+					}
+
+				}
+			}
+			&:not(:first-child){
+				.text-wrap {
+					
+					&:after {
+						display: none;
+					}
+
+				}
+			}
 		}
-		.cell {
+	}
+	@include media(max-width, 600px) {
+
+		flex-direction: column;
+
+		.image_box {	
+			width: 100%;
+				
 			&:not(:last-child){
 				.text-wrap {
 					&:after {
@@ -426,7 +466,8 @@ figure {
 					}
 				}
 			}
-		}
+		}	
+		
 	}
 	
 }
@@ -461,4 +502,52 @@ figure {
 		color: $color-lblue;
 		animation: blinking 1s infinite;
 	  } 
+}
+
+
+.contact_item {
+    display: table-cell;
+
+    .contact_email {
+        margin-top: 0;
+        padding-left: 28px;
+
+    }
+
+    .media-left,
+    .media-right, 
+    .media-body {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .media-left {
+        display: table-cell;
+        vertical-align: top;
+        padding-right: 10px;
+        padding-left: 2px;
+        
+    }
+
+    .media-body {
+        width: auto;
+    }
+    .media-heading {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+}
+
+.section_page_header {
+
+	&:before {
+		content: '';
+		position: absolute;
+		background: $color-black;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		height: 100%;
+		width: 100%;
+	}
 }

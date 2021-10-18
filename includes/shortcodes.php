@@ -46,4 +46,3 @@ function mbn_testimonials_shortcode(){
 
 }
 add_shortcode('mbn_testimonials', 'mbn_testimonials_shortcode');
-

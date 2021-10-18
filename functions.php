@@ -3,7 +3,7 @@
 define('MBN_DIR_URI', get_template_directory_uri());
 define('MBN_DIR_PATH', get_template_directory());
 define('MBN_ASSETS_URI', MBN_DIR_URI.'/resources');
-define('MBN_MAP_API_KEY',"AIzaSyDac2mOtJr_IktjUhiLZYRL_xHzxRbodRE");
+define('MBN_MAP_API_KEY',"AIzaSyDGw796lT6PGFF97mZxv5LnemjwcDaJMJQ");
 
 /**
  * Theme setup
@@ -96,7 +96,7 @@ function mbn_enqueue_scripts(){
     //wp_enqueue_script('fancybox', MBN_ASSETS_URI.'/vendor/fancybox/jquery.fancybox.min.js', [], $wp_version);
     
     // App
-    wp_enqueue_style('app', MBN_ASSETS_URI.'/css/app.css', [], '1.0.5');
+    wp_enqueue_style('app', MBN_ASSETS_URI.'/css/app.css', [], '1.1.2');
     wp_enqueue_script('app', MBN_ASSETS_URI.'/js/app.js', [], $wp_version, true);
     
     // https://use.typekit.net/zme4tpm.css
@@ -113,6 +113,10 @@ function mbn_enqueue_scripts(){
 }
 add_action('wp_enqueue_scripts', 'mbn_enqueue_scripts', 20);
 
+/*
+ * Make Theme available for translation.
+ */
+load_theme_textdomain( 'mbn_theme', get_template_directory() . '/languages' );
 
 // remove wp emoji
 remove_action('wp_head', 'print_emoji_detection_script', 7);

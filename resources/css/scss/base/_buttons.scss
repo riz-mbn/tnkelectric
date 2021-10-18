@@ -40,11 +40,11 @@
     &.hollow {
         background: none;
         color: $color-dblue;
-        border-color: $color-dblue;
+        border-color: $color-primary;
 
         &:hover {
-            background: $color-dblue;
-            border-color: $color-dblue;
+            background: $color-primary;
+            border-color: $color-primary;
             color: $color-white;
 
             i.dark {
@@ -54,22 +54,22 @@
     }
 
     &.primary {
-        background: $color-dblue;
+        background: $color-primary;
         color: $color-white;
 
         &:hover {
             color: $color-white;
-            background: lighten($color-dblue, 10%);
+            background: lighten($color-primary, 10%);
         }
         
         &.hollow {
             background: none;
             color: $color-dblue;
-            border-color: $color-dblue;
+            border-color: $color-primary;
     
             &:hover {
-                background: $color-dblue;
-                border-color: $color-dblue;
+                background: $color-primary;
+                border-color: $color-primary;
                 color: $color-white;
 
                 i.dark {

@@ -17,10 +17,10 @@
         <div class="hsnav-s6 sticky" data-sticky data-options="marginTop:0">
             <div class="grid-container">
                 <div class="navbar">
-                    <a class="logo" href="<?php echo get_home_url(); ?>">
-                        <figure><img src="<?php echo MBN_ASSETS_URI ?>/img/logo.svg" alt="" width="306" height="48" ></figure>
+                    <a class="logo" href="<?php echo esc_url( get_home_url(), 'mbn_theme'); ?>">
+                        <figure><img src="<?php echo esc_url( MBN_ASSETS_URI . '/img/logo.svg', 'mbn_theme'); ?>" alt="" width="306" height="48" ></figure>
                     </a>
-                    <span class="navicon hide-for-large" data-toggle="header">mobile menu</span>
+                    <span class="navicon hide-for-large" data-toggle="header"><?php _e('mobile menu', 'mbn_theme'); ?></span>
 
                     <nav class="navmenu show-for-large">                    
                         <?php
@@ -33,8 +33,18 @@
                             ));
                         ?>     
                     </nav>
+                    <div class="navutil show-for-large">
+                        <a href="tel:6024971754" class="contact_item contact_phone" >
+                            <div class="media-left">
+                                <figure class=""><img src="<?php echo esc_url( MBN_ASSETS_URI . '/img/icon/icn-phone.svg', 'mbn_theme'); ?>" alt="" width="15" height="15" /></figure>
+                            </div>
+                            <div class="media-body"><span class="media-heading"><?php _e('(602) 497-1754', 'mbn_theme'); ?></span></div>
+                        </a>  
+                    </div>
+
                     <nav class="mobmenu hide-for-large">     
-                        <a href="#" class="button primary large hollow text-center">Get a no hassle free analysis</a>                   
+                        <a href="<?php echo esc_url( home_url() .'/contact', 'mbn_theme') ?>" class="button primary large hollow text-center"><?php _e('Get a no hassle free analysis', 'mbn_theme'); ?></a>   
+                        <a href="<?php echo esc_url( 'tel:6024971754', 'mbn_theme') ?>" class="button light clear"><span class="highlight"><?php _e('Or Call Us', 'mbn_theme'); ?> </span><?php _e( '(602) 497-1754', 'mbn_theme'); ?></a>        
                         <?php
                             wp_nav_menu( array( 
                                 'theme_location' => 'mobile-menu',

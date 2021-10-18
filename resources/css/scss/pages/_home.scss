@@ -228,19 +228,46 @@
 	justify-content: space-between;
 	z-index: 2;
 	gap: 2em;
-	bottom: -60px;
+	bottom: -30px;
 
 	figure {
 		width: 25%;
+		text-align: center;
 	}
 
-	@include media (max-width, 1023px) {
-		bottom: 0;
-	}
 }
 
 .section_logos {
-	background: $color-primary;
+	background: $color-black;
+	
+	@include media (max-width, 1023px) {
+		
+		.hero-logos {		
+			bottom: 0;	 
+		}
+	}
+
+	@include media (max-width, 768px) {
+
+		.hero-logos {			
+			bottom: 0px;
+			flex-wrap: wrap; 	
+			figure {
+				width: 45%;
+			}
+		}
+	}
+
+	@include media (max-width, 410px) {
+
+		.hero-logos {	
+			justify-content: center;
+
+			figure {
+				width: 100%;
+			}
+		}
+	}
 }
 
 .section_home_2 {
@@ -257,6 +284,10 @@
 
 	figure.penta {
 		float:right;
+	}
+
+	.button {
+		background: $color-primary;
 	}
 	@include media (max-width, 1023px) {
 		figure.penta {
@@ -324,7 +355,7 @@
 
 
 }
-.section_home_5 {
+.section_testimonials {
 	padding: 115px 0;
 	position: relative;
  
@@ -459,6 +490,20 @@
 		}
 	}
 
+	.ratings_info {		
+
+		.info_1 {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			
+			p,h1 {
+				margin-bottom: 10px
+			}
+		}
+
+	}
+
 	@include media(max-width, 1440px){
 		.col-testi {
 			margin-right: -30px;
@@ -488,6 +533,7 @@
 				margin-right: 50px;
 				flex-direction: column;
 				align-items: center;
+
 			}
 		}
 		.section_title,
@@ -519,6 +565,7 @@
 	@include media (max-width, 600px) {
 		.reviews_info {
 			justify-content: flex-start;
+			margin-bottom:30px;
 		}
 
 		
@@ -548,7 +595,7 @@
 	
 }
 
-.section_home_6 {
+.section_services_bottom {
 	padding: 115px 0 130px;
 
 	.grid-container {
@@ -600,7 +647,7 @@
 			top: 35%;
 		}
 
-		&.mobile {
+		figure.mobile {
 			display: none;
 		}
 	}
@@ -630,7 +677,7 @@
 		.col-image { 
 
 			&:after {
-				right: 20px;
+				right: -20px;
 			}
 		}
 	}
@@ -668,11 +715,11 @@
 		}
 		.col-image {
 				
-			&.mobile {
+			figure.mobile {
 				display: block;
 			}
 
-			&:not(.mobile){
+			figure:not(.mobile){
 				display: none;
 			}
 

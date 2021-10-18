@@ -7,39 +7,78 @@
     }
 }
 
-.contact_info {
+.get_in_touch {
     padding: 140px 0 80px;
 
-    .contact_item {
-        display: table-cell;
+    h2 {
+        font-weight: 400;
+        color: $color-black;
+    }
+    .gform_wrapper {
+        width: 80%;
+        
+        .ct_field {
+            .gfield_label {
+                display: none;
+            }
 
-        .contact_email {
-            margin-top: 0;
-            padding-left: 28px;
+            input, select, textarea {
+                border:0;
+                border-bottom: 1px solid #000;
 
-        }
-
-        .media-left,
-        .media-right, 
-        .media-body {
-            display: table-cell;
-            vertical-align: top;
-        }
-
-        .media-left {
-            display: table-cell;
-            vertical-align: top;
-            padding-right: 10px;
-            padding-left: 2px;
-            
-        }
-
-        .media-body {
-            width: auto;
-        }
-        .media-heading {
-            margin-top: 0;
-            margin-bottom: 5px;
+                &:placeholder {
+                    color: #BCBCBC;
+                }
+            }
         }
     }
+
+    .logo {
+        margin-bottom:25px;
+    }
+
+    .follow {
+        font-size: 18px;
+        font-weight: 400;
+        color: $color-black;
+        display: flex;
+
+        .hdr {
+            margin-right: 30px;
+        }
+        .socials {
+            display: flex;               
+            justify-content: center;
+            gap: 0.5em;
+        }
+    }
+}
+
+.section_map {
+    margin-bottom: 84px;
+    padding-top: 0;
+}
+
+.contact_info {
+    display: flex;
+    flex-wrap: wrap;
+
+    .contact_item {
+        width: 50%;
+        margin-bottom: 20px;
+        .media-body {
+            color: $color-black;
+            font-size: 18px;
+        }
+
+        .contact_phone {
+            .media-body {
+                color: $color-primary;
+                font-weight: 600;
+                font-size: 24px;
+                letter-spacing: 0.1em;
+            }
+        }
+    }
+
 }

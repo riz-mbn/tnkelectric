@@ -1,10 +1,14 @@
-<?php get_header() ?>
+<?php 
+/**
+ * Template Name: Thank You Page template
+ */
+get_header() ?>
 
 <section id="sec-404" class="sec-404 section text-center">
     <div class="grid-container">
         <div class="text-block">
-            <h1>Page Not Found.</h1>
-            <p>The page you requested cannot be found.</p>
+            <h1>Thank You</h1>
+            <p>Thank you for contacting us, we will get back to you as soon as we can.</p>
 
             <p><a class="button" href="<?php echo home_url() ?>">Go back to Homepage</a></p>
         </div>

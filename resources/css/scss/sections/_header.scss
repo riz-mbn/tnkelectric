@@ -74,7 +74,7 @@ header {
 			
 		.grid-container {
 			max-width: 100%;
-			padding: 0 36px;
+			padding: 0 20px;
 		}
 		
 		&.sticky {
@@ -118,9 +118,10 @@ header {
 				a {
 					font-size: 16px;
 					text-transform: uppercase;
-					padding: 18px 30px;
+					padding: 18px 20px;
 					line-height: 1;
 					color: $color-white;
+					letter-spacing: 0.1em;
 
 					&:hover {
 						background: #52360C;
@@ -144,16 +145,20 @@ header {
 							margin-top: -6px;
 						}
 					}
-				}
+				}				
 
 				.submenu {
-					background: lighten($color-black, 20%);
-					padding: 10px 0;
+					background: $color-black;
+					padding: 10px;
 					li {
 						display: block;
 						a {
 							padding: 15px 20px;
 						}
+					}
+
+					&.is-dropdown-submenu {
+						border: 0;
 					}
 				}
 
@@ -169,21 +174,66 @@ header {
 						padding-bottom: 30px;
 					}
 				}
+
+				@include media (max-width, 1600px) {					
+
+					a {
+						font-size: 14px;
+						padding: 18px 14px;
+					}
+				}
+				@include media (max-width, 1200px) {
+						
+					.is-dropdown-submenu-parent {
+						> a {
+							padding-right: 20px;
+
+							&:after {
+								border:0;
+								border-right: 2px solid;
+								border-bottom: 2px solid;
+								width: 8px;
+								height: 8px;
+								transform: rotate(45deg);
+								right: 5px;
+								margin-top: -6px;
+							}
+						}
+					}
+				}
 			}
 
 
 			.navutil {
 				float: right;
-				min-height: 84px;
-				padding: 24px;
+				padding-left: 15px;
+				min-height: 100%;
 
 				a {
-					display: inline-block;
-					padding: 5px 40px;
+					display: inline-block; 
 					color: $color-white;
 					font-size: 14px;
 					line-height: 1;
-					text-transform: uppercase;
+					text-transform: capitalize;
+					width: 160px;
+					transition: all 0.3s ease;
+
+					&.contact_item {
+						.media-body {
+							.media-heading {
+								font-size: 18px;
+								font-weight: 700;
+							}
+						}
+
+						&:hover {
+							.media-body {
+								.media-heading {
+									color: $color-primary;
+								}
+							}
+						}
+					}
 				}
 
 				ul {
@@ -208,7 +258,7 @@ header {
 				width: 50px; 
 				height: 50px; 
 				position: absolute;  
-				right: 20px; 
+				right: 0; 
 				font-size: 0; 
 				cursor: pointer; 
 				display: block;
@@ -252,11 +302,11 @@ header {
 					}
 				}
 
-			}
+			} 
 
 			@include media(max-width, 1366px) {
 				
-				.logo, .navlogo {
+				.logo, .navlogo { 
 					//margin-left: 30px;
 				}
 
@@ -266,8 +316,17 @@ header {
 						padding-right: 30px;
 					}
 				}
+			}
 
-
+			@include media(max-width, 1280px){
+				
+				.logo, .navlogo {
+					figure {
+						img {
+							width: 230px;
+						}
+					}
+				}
 			}
 
 			@include media(max-width, 1023px) {
@@ -289,6 +348,18 @@ header {
 
 					.button {
 						width: 100%;
+						color: $color-white;
+
+						&.light.clear {
+							font-size: 18px;
+							font-weight: 700;
+							text-transform: capitalize;
+
+							.highlight {
+								font-size: 16px;
+								font-weight: 600;
+							}
+						}
 					}
 
 					ul {
@@ -402,7 +473,7 @@ header {
 				
 				.navmenu {
 					a {
-						padding: 18px 20px;
+						padding: 18px 10px;
 					}
 				}
 			}
@@ -410,7 +481,7 @@ header {
 		}
 	}
 
-	@include media (max-width, 1300px){
+	@include media (max-width, 1366px){
 		.hsnav-s6 {
 
 			.navbar {
@@ -418,6 +489,19 @@ header {
 				.navmenu {
 					a {
 						padding: 18px 8px;
+					}
+				}
+
+				.navutil {
+
+					a{
+						width: 150px;
+					}
+
+					.media-body {
+						.media-heading {
+							font-size: 16px !important;
+						}
 					}
 				}
 			}
