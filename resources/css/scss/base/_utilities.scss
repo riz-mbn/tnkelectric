@@ -21,7 +21,35 @@
     font-weight: 700;
 }
 
+.ct_margin_x_0 {
+	margin-left: 0;
+	margin-right: 0;
+}
 
+.ct_margin_left_0 {
+	margin-left: 0;
+}
+
+.ct_margin_right_0 {
+	margin-right: 0;
+}
+
+.ct_margin_bottom_0 {
+	margin-bottom: 0px;
+}
+
+.ct_margin_bottom_20 {
+	margin-bottom: 20px;
+}
+
+.ct_margin_bottom_10 {
+	margin-bottom: 10px;
+}
+
+
+.ct_padding_30{
+	padding: 30px;
+}
 
 //Custom foundation 
 @include media(min-width, 1600px) {

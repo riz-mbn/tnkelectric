@@ -1,6 +1,6 @@
 
 /* Buttons */
-.button{
+.button {
     padding: 10px 30px;
     font-size: 16px;
     font-weight: 500;
@@ -309,7 +309,7 @@
     }
 
     &.large {   
-        padding: 20px 40px;
+        padding: 20px 35px;
         font-size: 20px;
     }
 
@@ -484,3 +484,69 @@ a.btn-back {
         margin:-2px 5px;
     }
 }
+
+//blocks
+
+
+.wp-block-button {   
+    margin-bottom: 20px;
+
+    &.button {
+        &:hover {
+            .wp-block-button__link { 
+                color: #fff !important;
+            }
+        }
+    }
+
+    .wp-block-button__link {
+        border-radius: 0!important;
+        border: 0!important;
+        padding: 0!important;
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 28px;
+        transition:all 0.5s ease;
+        min-width: 240px;
+        letter-spacing: 0.11em;
+        color: $color-white;
+        background: transparent;
+
+        &:hover{
+            
+            color: #fff !important;
+        }
+    }
+    &.hollow {
+            
+        background: transparent;
+
+        .wp-block-button__link {
+            color: $color-primary;
+        }
+    }
+
+
+    &.primary {
+        background: $color-primary;       
+            
+        .wp-block-button__link { 
+        }
+    }
+
+    &.light {
+        .wp-block-button__link {
+            color: $color-white !important;
+        }
+    }
+}
+
+.cta-group {
+        
+    .wp-block-buttons {
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+}
+

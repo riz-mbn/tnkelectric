@@ -61,8 +61,8 @@ function mbn_enqueue_scripts(){
     wp_enqueue_style('mbn-style', get_stylesheet_uri());
 
     // unneccessary scripts
-    wp_deregister_script('wp-embed');
-    wp_deregister_style('wp-block-library');
+    // wp_deregister_script('wp-embed');
+    // wp_deregister_style('wp-block-library');
 
 
     // dummy handler - for using inline-css
@@ -96,7 +96,7 @@ function mbn_enqueue_scripts(){
     //wp_enqueue_script('fancybox', MBN_ASSETS_URI.'/vendor/fancybox/jquery.fancybox.min.js', [], $wp_version);
     
     // App
-    wp_enqueue_style('app', MBN_ASSETS_URI.'/css/app.css', [], '1.1.2');
+    wp_enqueue_style('app', MBN_ASSETS_URI.'/css/app.css', [], '1.3.6');
     wp_enqueue_script('app', MBN_ASSETS_URI.'/js/app.js', [], $wp_version, true);
     
     // https://use.typekit.net/zme4tpm.css

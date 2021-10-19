@@ -371,13 +371,34 @@ figure {
 		color: $color-grey;
 		font-weight: 400;
 	}
+
+	@include media (max-width,1023px){
+		padding: 20px;
+	}
 }
 
+.service_links {
+	.wp-block-columns {
+		margin-bottom: 0 !important;
+	}
+
+	@include media(max-width, 1023px){
+		.wp-block-columns {
+			flex-basis: 100%!important;
+		}
+	}
+}
 
 .image_boxes {
 	display: flex;
     flex-wrap: wrap;
 	margin: 0 -30px;
+
+	>  .wp-block-group__inner-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 	
 	.image_box {
 		width: 33.33%;
