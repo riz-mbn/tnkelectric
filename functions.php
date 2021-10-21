@@ -69,6 +69,8 @@ function mbn_enqueue_scripts(){
     wp_register_style('inlinecss-handle', false);
     wp_enqueue_style('inlinecss-handle');
 
+    // fonts
+    wp_enqueue_style('custom-fonts', 'https://use.typekit.net/hma2ygi.css', [], $wp_version);
     wp_enqueue_style('font-roboto', 'https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap', [], $wp_version);
 
 	//Global JS
@@ -96,11 +98,9 @@ function mbn_enqueue_scripts(){
     //wp_enqueue_script('fancybox', MBN_ASSETS_URI.'/vendor/fancybox/jquery.fancybox.min.js', [], $wp_version);
     
     // App
-    wp_enqueue_style('app', MBN_ASSETS_URI.'/css/app.css', [], '1.3.6');
+    wp_enqueue_style('app', MBN_ASSETS_URI.'/css/app.css', [], '1.4.8');
     wp_enqueue_script('app', MBN_ASSETS_URI.'/js/app.js', [], $wp_version, true);
     
-    // https://use.typekit.net/zme4tpm.css
-    wp_enqueue_style('custom-fonts', 'https://use.typekit.net/hma2ygi.css', [], $wp_version);
 
 
     // localize objects

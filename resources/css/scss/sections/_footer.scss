@@ -63,13 +63,15 @@
             .services_menu {
                 margin: 0;
 
+                h5 {font-weight: 17px;}
+
                 li {
                     list-style: none;
                     
                     a{
                         color: #EEF5FF;
                         font-size: 15px;
-                        font-weight: 300;
+                        font-weight: 400;
                         letter-spacing: 0.05em;
                     }
                 }
@@ -81,8 +83,8 @@
                     list-style: none;
                     
                     a{
-                        font-size: 15px;
-                        font-weight: 700;
+                        font-size: 17px;
+                        font-weight: 400;
                     }
                 }
             }
@@ -176,10 +178,16 @@
 
     .copyright {
         float: left;
-        margin-right: 70px;
+        color: #949494;
+        letter-spacing: -0.02em;
     }
 
     .designby {
+        color: #949494;
+        letter-spacing: -0.02em;
+         a{
+            color: #949494;
+         }
     }
 
 	@include media(max-width, 1440px) {  

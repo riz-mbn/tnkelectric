@@ -12,13 +12,16 @@
 
 //Font Weights
 .fw-light {
-    font-weight: 300;
+    font-weight: 300 !important;
 }
 .fw-normal {
-    font-weight: 400;
+    font-weight: 400 !important;
+}
+.fw-semibold {
+    font-weight: 600 !important;
 }
 .fw-bold {
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 
 .ct_margin_x_0 {
@@ -32,6 +35,14 @@
 
 .ct_margin_right_0 {
 	margin-right: 0;
+}
+
+.ct_margin_right_20 {
+	margin-right: 20px;
+}
+
+.ct_margin_right_90 {
+	margin-right: 90px;
 }
 
 .ct_margin_bottom_0 {
@@ -203,5 +214,18 @@
 
 	&.warning {
 		color: $color-white;
+	}
+}
+
+.icn_checklist {
+	ul {
+		li {
+			padding-left: 25px;
+			font-weight: 600;
+
+			&::marker {
+				content: url(../img/icon/icn-check.svg);
+			}
+		}
 	}
 }

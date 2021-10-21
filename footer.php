@@ -22,7 +22,7 @@
                                 <h4 class="col-title"><?php _e('Find Us', 'mbn_theme'); ?></h4>
                                 <a href="<?php esc_url('https://g.page/TNKElectric?share', 'mbn_theme');?>">
                                     <?php _e('T & K Electri', 'mbn_theme'); ?>c<br/>
-                                    <?php _e('18 N 31st St', 'mbn_theme'); ?><br/>
+                                    <?php _e('2618 N 31st St', 'mbn_theme'); ?><br/>
                                     <?php _e('Phoenix, AZ 85008', 'mbn_theme'); ?>
                                 </a>
                             </div>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="cell xlarge-3 xlarge-offset-1 large-4 medium-6 footer_menu">
                         <div class="menu_1">
-                            <h5>Services</h5>
+                            <h5 class="fw-normal">Services</h5>
                             <ul class="services_menu">
                                 <li><a href="<?php echo home_url() ?>/residential-solar-services">Residential Solar Services</a></li>
                                 <li><a href="<?php echo home_url() ?>/commercial-solar-services">Commercial Solar Services</a></li>
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="footbot">
-                <div class="copyright">&copy; <?php _e('T&KElectric.', 'mbn_theme'); ?> <?php echo esc_url( date('Y'), 'mbn_theme'); ?>; ?></div>
+                <div class="copyright">&copy; <?php _e('T&KElectric.', 'mbn_theme'); ?> <?php echo esc_html( date('Y'), 'mbn_theme'); ?>.</div>
                 <div class="designby"><a href="<?php echo esc_url('https://www.mybizniche.com/phoenix-web-design/', 'mbn_theme'); ?>" target="_blank"><?php _e('Website Design', 'mbn_theme'); ?></a> <?php _e('by: My Biz Niche', 'mbn_theme'); ?></div>
             </div>  
         </div>  

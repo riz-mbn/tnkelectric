@@ -14,24 +14,6 @@
         font-weight: 400;
         color: $color-black;
     }
-    .gform_wrapper {
-        width: 80%;
-        
-        .ct_field {
-            .gfield_label {
-                display: none;
-            }
-
-            input, select, textarea {
-                border:0;
-                border-bottom: 1px solid #000;
-
-                &:placeholder {
-                    color: #BCBCBC;
-                }
-            }
-        }
-    }
 
     .logo {
         margin-bottom:25px;
@@ -43,13 +25,55 @@
         color: $color-black;
         display: flex;
 
+        > .wp-block-group__inner-container {
+            font-size: 18px;
+            font-weight: 400;
+            color: $color-black;
+            display: flex;
+            margin: 0;
+            align-items: center;
+        }
+
         .hdr {
             margin-right: 30px;
+            margin-bottom: 0 !important;
         }
         .socials {
             display: flex;               
             justify-content: center;
             gap: 0.5em;
+
+            > .wp-block-group__inner-container {
+                display: flex;               
+                justify-content: center;
+                gap: 0.5em;
+                align-items: center;
+            }
+        }
+    }
+
+    .icon_text {
+        img {
+            margin-right: 20px;
+        }
+    }
+}
+
+.gform_wrapper {
+    width: 80%;
+    
+    .ct_field {
+        .gfield_label {
+            display: none;
+        }
+
+        input, select, textarea {
+            border:0;
+            border-bottom: 1px solid #000;
+
+            &:placeholder {
+                color: #BCBCBC;
+            }
         }
     }
 }
