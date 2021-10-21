@@ -190,6 +190,31 @@ p.icon_text {
     top: 35%;
 }
 
+.contact_info_wrap {
+    .icn_address {
+        span {
+            display: block;
+        }
+    }
+    @include media (max-width,1327px){
+        flex-direction: column;
+
+        .icon_block {
+            grid-template-columns: 10% auto !important;
+        }
+            
+        .icn_address {
+            span {
+                display: inline;
+            }
+        }
+
+        .wp-block-column:not(:first-child) {
+            margin-left: 0;
+        }
+    }
+}
+
 .icon_block {
     .wp-block-media-text__content {
         padding: 0 !important;
