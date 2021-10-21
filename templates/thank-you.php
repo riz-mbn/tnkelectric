@@ -4,7 +4,7 @@
  */
 get_header() ?>
 
-<section id="sec-404" class="sec-404 section text-center">
+<section id="sec-thankyou" class="sec-thankyou section text-center">
     <div class="grid-container">
         <div class="text-block">
             <h1>Thank You</h1>
