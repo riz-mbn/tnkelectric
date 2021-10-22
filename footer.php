@@ -40,7 +40,7 @@
                                             <img src="<?php echo MBN_ASSETS_URI ?>/img/icon/icn-ig.svg" alt="Instagram" width="24" height="24"/>
                                         </figure>
                                     </a>
-                                    <a href="<?php echo esc_url('https://www.facebook.com/', 'mbn_theme'); ?>">
+                                    <a href="<?php echo esc_url('https://www.facebook.com/TNKElectric/', 'mbn_theme'); ?>">
                                         <figure>
                                             <img src="<?php echo MBN_ASSETS_URI ?>/img/icon/icn-fb.svg" alt="Facebook" width="18" height="24"/>
                                         </figure>
