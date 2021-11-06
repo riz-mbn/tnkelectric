@@ -1,6 +1,7 @@
 
 body {
     &.admin-bar {
+		header,
 		.hsnav-s6 {
 			top: 32px !important;
 		}        
@@ -9,6 +10,7 @@ body {
     @include media(max-width, 782px) {
         
         &.admin-bar {
+			header,
 			.hsnav-s6 {
 				top: 46px !important;
 				 
@@ -34,7 +36,7 @@ body {
 			.navbar {
 				min-height: 156px;
 			}
-
+			
 		}
 	}
 }
@@ -97,35 +99,60 @@ header {
 			display: flex;
 			align-items: center;
 			transition: all 0.3s ease;
+			justify-content: space-between;
 
 			.logo, .navlogo {
 				float: left;
 				// margin-left: 50px;
 				// margin-top: 14px;
-				
-				height: 50px;
+				width: auto;
 				overflow: hidden;
 			}
 
 			.navmenu {
 				padding: 14px 0;
-				width: 100%;
+				width: auto;
+
+				ul.menu {					
+					display: flex;
+					-ms-flex-wrap: wrap;
+					flex-direction: row;
+					align-items: center;
+				}
 	
 
-				a {
-					font-size: 16px;
-					text-transform: uppercase;
-					padding: 18px 20px;
-					line-height: 1;
-					color: $color-white;
-					letter-spacing: 0.1em;
+				.menu-item {
 
-					&:hover {
-						background: #52360C;
+					a {
+						font-size: 16px;
+						text-transform: uppercase;
+						padding: 18px 20px;
+						line-height: 1;
 						color: $color-white;
-						border-radius: 140px;
+						letter-spacing: 0.1em;
+
+					}
+
+					&.navutil {
+						a {
+							&:hover {
+								color: $color-primary;
+							}
+						}
+					}
+
+					&:not(.navutil) {
+						a {
+		
+							&:hover {
+								background: #52360C;
+								color: $color-white;
+								border-radius: 140px;
+							}
+						}	
 					}
 				}
+
 
 				.is-dropdown-submenu-parent {
 					> a {
@@ -175,8 +202,15 @@ header {
 				@include media (max-width, 1600px) {					
 
 					a {
-						font-size: 14px;
-						padding: 18px 14px;
+						font-size: 14px !important;
+						padding: 18px 14px !important;
+					}
+					.is-dropdown-submenu-parent {
+						> a {
+							&:after {
+								right: 0px;
+							}
+						}
 					}
 				}
 				@include media (max-width, 1200px) {
@@ -205,15 +239,29 @@ header {
 				float: right;
 				padding-left: 15px;
 				min-height: 100%;
+				width: auto;
+				align-items: center;
 
 				a {
-					display: inline-block; 
+					display: flex; 
 					color: $color-white;
-					font-size: 14px;
 					line-height: 1;
 					text-transform: capitalize;
-					width: 160px;
 					transition: all 0.3s ease;
+					position: relative;
+					font-size: 18px !important;
+    				font-weight: 700;
+					align-items: center;
+
+					&:before {
+						content: url(../img/icon/icn-phone.svg);
+						position: relative;
+						left: 0;
+						width: 15px;
+						height: 15px;
+						margin-right: 10px;
+						top: 20%;
+					}
 
 					&.contact_item {
 						.media-body {
@@ -300,6 +348,43 @@ header {
 				}
 
 			} 
+			
+			.mobmenu {
+				left: 100%;
+			}
+			
+			@include media(min-width, 1024px) {
+				.mobmenu,
+				.navicon {
+					display: none;
+				}
+			}
+			@include media(max-width, 1440px) {
+				
+				.navmenu {
+					a {
+						padding: 18px 12px !important;
+						font-size: 14px !important;
+					}
+					.is-dropdown-submenu-parent {
+
+						> a {
+							&:after {
+								right: 0;
+							}
+						}
+					}
+				}
+			}
+
+			@include media(max-width, 1320px) {
+				
+				.navmenu {
+					a {
+						padding: 18px 9px !important;
+					}
+				}
+			}
 
 			@include media(max-width, 1366px) {
 				
@@ -320,7 +405,7 @@ header {
 				.logo, .navlogo {
 					figure {
 						img {
-							width: 230px;
+							width: 180px;
 						}
 					}
 				}
@@ -332,16 +417,25 @@ header {
 					margin-right: 90px;
 				}
 
+				.navutil,
+				.navmenu {
+					display: none;
+				}
+
+				.navicon {
+					display: block;
+				}
+
 				.mobmenu {
 					position: fixed;
-					top: -100vh;
+					top: 100px;
 					height: calc(100vh - 120px);
-					left: 0;
+					left: 100%;
 					right: 0;
 					background: $color-dark;
 					transition:all 0.5s ease;
 					overflow: auto;
-					padding: 30px;
+					padding: 20px;
 
 					.button {
 						width: 100%;
@@ -371,7 +465,7 @@ header {
 							margin: 0;
 
 							a {
-								font-size: 26px; 
+								font-size: 22px; 
 								line-height: 1.1; 
 								font-weight: 400; 
 								color: $color-white;
@@ -398,7 +492,13 @@ header {
 										text-transform: none; 
 										text-align: left; 
 										color: $color-white; 
-										font-size: 17px
+										font-size: 16px;
+										letter-spacing: 0.04em;
+
+										&:hover {
+											font-weight: 600;
+											color: $color-lblue;
+										}
 									}
 								}
 							}
@@ -408,21 +508,31 @@ header {
     				.submenu-toggle {
     					background: transparent url(../img/icon/icn-chev-down.svg) no-repeat 17px center / 15px; 
     					width:55px; 
-    					height: 47px; 
+    					height: 24px; 
     					right: 0;
 						transition: all 0.3s ease;
+						transform: rotate(-90deg);
 
     					&[aria-expanded="true"] {
-							transform: rotate(-90deg);
+							transform: rotate(0);
     					}
     					&:after {
     						content: ""; border:0;
     					}
     				}
 					
-					@at-root header.show-menu .hsnav-s6 .mobmenu {
-						display: block;
-						top:80px;
+					@at-root header.show-menu .hsnav-s6 {
+						.mobmenu {
+							display: block !important;
+							left: 0;
+						}
+
+						&.is-stuck {
+							.mobmenu {
+								top: 80px;
+							}
+						}
+
 					}
 
 				}
@@ -435,6 +545,31 @@ header {
 
 	}
 
+	@include media (min-width, 1921px){
+		
+		.grid-container {
+			max-width: 1410px !important;
+			padding: 0;
+		}
+
+		.navbar {
+			.navmenu a {
+				padding: 18px 12px!important;
+				font-size: 14px!important;
+			}
+		}
+	}
+
+	@include media (max-width, 425px){
+		.navbar {
+			.mobmenu {
+				.button {
+					font-size: 14px !important;
+					padding: 10px 0px !important;
+				}
+			}
+		}
+	}
 	@include media (max-width, 1023px){
 		.hsnav-s6 {
 
@@ -491,10 +626,6 @@ header {
 
 				.navutil {
 
-					a{
-						width: 150px;
-					}
-
 					.media-body {
 						.media-heading {
 							font-size: 16px !important;
@@ -505,15 +636,47 @@ header {
 
 		}
 	}
-
 	@include media (max-width, 1120px){
 		.hsnav-s6 {
 
 			.navbar {
+
+				.logo, .navlogo {
+					figure {
+						img {
+							width: 150px;
+						}
+					}
+				}
+			}
+		}
+	}
+	@include media (max-width, 1143px){
+		.hsnav-s6 {
+
+			.navbar {
+
+				.navmenu {
+					a {
+						font-size: 13px !important;
+					}
+				}
+
+				.navutil {
+					padding-left:0;
+					
+					a {
+						letter-spacing: 0 !important;
+						&:before {
+							margin-right: 5px !important;
+						}
+					}
+				}
 				
 				.navmenu {
 					a {
-						font-size:14px;
+						font-size:13px;
+						padding: 18px 6px;
 					}
 				}
 			}

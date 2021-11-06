@@ -17,7 +17,8 @@
 .fw-normal {
     font-weight: 400 !important;
 }
-.fw-semibold {
+.fw-semibold,
+strong {
     font-weight: 600 !important;
 }
 .fw-bold {
@@ -37,6 +38,9 @@
 	margin-right: 0;
 }
 
+.ct_margin_left_20 {
+	margin-left: 20px;
+}
 .ct_margin_right_20 {
 	margin-right: 20px;
 }
@@ -46,7 +50,7 @@
 }
 
 .ct_margin_bottom_0 {
-	margin-bottom: 0px;
+	margin-bottom: 0px !important;
 }
 
 .ct_margin_bottom_20 {
@@ -57,9 +61,17 @@
 	margin-bottom: 10px;
 }
 
-
+.ct_padding_0{
+	padding: 0;
+}
 .ct_padding_30{
 	padding: 30px;
+}
+.ct_padding_20{
+	padding: 20px;
+}
+.ct_padding_left_20 {
+	padding-left: 20px;
 }
 
 //Custom foundation 
@@ -226,6 +238,18 @@
 			&::marker {
 				content: url(../img/icon/icn-check.svg);
 			}
+		}
+	}
+}
+
+.alignfull {
+	.wp-block-group__inner-container {
+		@include media (max-width, 1920px){			
+			max-width: 100%!important;
+		}
+
+		@include media (min-width, 1921px){			
+			max-width: 1410px!important;
 		}
 	}
 }

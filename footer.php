@@ -10,12 +10,12 @@
                         <a class="logo" href="<?php echo esc_url( get_home_url() , 'mbn_theme'); ?>">
                             <figure><img src="<?php echo esc_url( MBN_ASSETS_URI . '/img/logo.svg', 'mbn_theme'); ?>" alt="" width="359" height="56" ></figure>
                         </a>
-                        <a href="#" class="button primary large hollow"><?php _e('Get a no hassle free analysis', 'mbn_theme'); ?></a>
+                        <a href="<?php home_url()?>/contact-us" class="button primary large hollow"><?php _e('Get a no hassle free analysis', 'mbn_theme'); ?></a>
                     </div>
                     <div class="cell xlarge-4 large-4 medium-6 information">
                         <div class="information_1">
                             <div class="call_us">
-                                <h4 class="col-title"><?php _e('Contact Us', 'mbn_theme'); ?></h4>
+                                <h4 class="col-title"><?php _e('Call Us', 'mbn_theme'); ?></h4>
                                 <a href="tel:6024971754"><strong><?php _e('(602) 497-1754', 'mbn_theme'); ?></strong></a>
                             </div>
                             <div class="find_us">
@@ -79,8 +79,12 @@
             </div>  
         </div>  
     </footer>
-</div>  
-
+    <div class="section_ngage">
+        <div class="grid-container">            
+            <div class="nj-engage" data-position="left"></div> 
+        </div>
+    </div>
+</div> 
 <?php wp_footer() ?>
 
 </body>

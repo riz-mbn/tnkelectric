@@ -98,8 +98,8 @@ function mbn_enqueue_scripts(){
     //wp_enqueue_script('fancybox', MBN_ASSETS_URI.'/vendor/fancybox/jquery.fancybox.min.js', [], $wp_version);
     
     // App
-    wp_enqueue_style('app', MBN_ASSETS_URI.'/css/app.css', [], '1.5.2');
-    wp_enqueue_script('app', MBN_ASSETS_URI.'/js/app.js', [], $wp_version, true);
+    wp_enqueue_style('app', MBN_ASSETS_URI.'/css/app.css', [], '1.8.3');
+    wp_enqueue_script('app', MBN_ASSETS_URI.'/js/app.js', [], '1.0.0', true);
     
 
 

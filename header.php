@@ -9,6 +9,7 @@
 
     <?php wp_head() ?>
 
+    <script type="text/javascript" src="https://cdn.nicejob.co/js/sdk.min.js?id=5898512929652736" defer></script>
 </head>
 <body <?php body_class() ?>>
 
@@ -20,9 +21,9 @@
                     <a class="logo" href="<?php echo esc_url( get_home_url(), 'mbn_theme'); ?>">
                         <figure><img src="<?php echo esc_url( MBN_ASSETS_URI . '/img/logo.svg', 'mbn_theme'); ?>" alt="" width="306" height="48" ></figure>
                     </a>
-                    <span class="navicon hide-for-large" data-toggle="header"><?php _e('mobile menu', 'mbn_theme'); ?></span>
+                    <span class="navicon" data-toggle="header"><?php _e('mobile menu', 'mbn_theme'); ?></span>
 
-                    <nav class="navmenu show-for-large">                    
+                    <nav class="navmenu">                    
                         <?php
                                 wp_nav_menu( array( 
                                 'theme_location' => 'main-menu',
@@ -33,16 +34,16 @@
                             ));
                         ?>     
                     </nav>
-                    <div class="navutil show-for-large">
+                    <!-- <div class="navutil">
                         <a href="tel:6024971754" class="contact_item contact_phone" >
                             <div class="media-left">
                                 <figure class=""><img src="<?php echo esc_url( MBN_ASSETS_URI . '/img/icon/icn-phone.svg', 'mbn_theme'); ?>" alt="" width="15" height="15" /></figure>
                             </div>
                             <div class="media-body"><span class="media-heading"><?php _e('(602) 497-1754', 'mbn_theme'); ?></span></div>
                         </a>  
-                    </div>
+                    </div> -->
 
-                    <nav class="mobmenu hide-for-large">     
+                    <nav class="mobmenu">     
                         <a href="<?php echo esc_url( home_url() .'/contact', 'mbn_theme') ?>" class="button primary large hollow text-center"><?php _e('Get a no hassle free analysis', 'mbn_theme'); ?></a>   
                         <a href="<?php echo esc_url( 'tel:6024971754', 'mbn_theme') ?>" class="button light clear"><span class="highlight"><?php _e('Or Call Us', 'mbn_theme'); ?> </span><?php _e( '(602) 497-1754', 'mbn_theme'); ?></a>        
                         <?php

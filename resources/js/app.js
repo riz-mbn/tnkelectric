@@ -85,9 +85,39 @@
                         slidesToShow: 1,
                         slidesToScroll: 1
                       }
+                    },
+                    {
+                      breakpoint: 325,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
                     }
                   ]
               });
+
+            //faqs
+            $('.cat_item').each(function(){
+                $(this).click(function(){
+                    var target = $(this).data('anchor');                
+                    $('#' + target).fadeIn('slow').siblings('.faqs_container').fadeOut('slow');
+
+                    if( $(this).hasClass('active') ) {
+                        $(this).addClass('active') 
+                    }
+                    else{
+                    
+                        $(this).removeClass('active') 
+                    }
+                });
+
+            });
+
+            $('.box_deal').each(function(){
+                $(this).wrapInner('<a href="#"></a>');
+
+            });
+
 
         },
 

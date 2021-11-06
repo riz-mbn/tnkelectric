@@ -7,10 +7,10 @@ add_shortcode('home_url', 'mbn_shortcode_home_url');
 
 
 function mbn_testimonials_shortcode(){
-
+    $returnhtml = '';
     $returnhtml .= '<section class="section_testimonials">';
-    $returnhtml .= '<div class="col-bg"><figure class="penta"><img src="'. esc_url( MBN_ASSETS_URI . '/img/bgs/img-bg-s5.jpg', 'mbn_theme') .'" alt="" width="1227" height="729" /></figure></div>';
     $returnhtml .= '<div class="grid-container">';
+    $returnhtml .= '<div class="col-bg"><figure class="penta"><img src="'. esc_url( MBN_ASSETS_URI . '/img/bgs/img-bg-s5.jpg', 'mbn_theme') .'" alt="" width="1227" height="729" /></figure></div>';
     $returnhtml .= '<h4 class="section_title">'. esc_html('Customer Endorsements', 'mbn_theme') . '</h4>';
     $returnhtml .= '<div class="grid-x">';
     $returnhtml .= '<div class="cell large-2 align-self-bottom">    ';
@@ -72,11 +72,93 @@ function mbn_testimonials_shortcode(){
     
     endif;
 
-    $returnhtml .= '</div></div>'; // testi_slick
-    $returnhtml .= '<a href="#" class="button primary large">' . esc_html('read more reviews', 'mbn_theme') . '</a>' ;
+    $returnhtml .= '</div>';    
+    $returnhtml .= '<div class="testi_btn"><a href="'. home_url().'/testimonials" class="button primary large">' . esc_html('read more reviews', 'mbn_theme') . '</a></div></div>'; // testi_slick
     $returnhtml .= '</div></div></div></div></section>';
 
     return $returnhtml;
 }
 add_shortcode('mbn_testimonials', 'mbn_testimonials_shortcode');
 
+//faqs shortcode
+function mbn_faqs_shortcode(){
+    $returnhtml = '';
+
+    wp_reset_query();
+    $returnhtml .= '<div class="faqs_wrap">';
+        $returnhtml .= '<div class="faqs_nav">';
+
+    $terms = get_terms( 'faqs_cats', array( 'hide_empty' => false, 'orderby' => 'id' ) ); // Get all terms of a taxonomy
+
+    if ( $terms && !is_wp_error( $terms ) ) :
+        
+        foreach ( $terms as $term ) :
+
+            $returnhtml .= '<div class="cat_item" data-anchor="'. esc_attr( $term->slug ) .'">';
+            $returnhtml .= '<div class="cat_inner">';
+            $returnhtml .= '<div class="cat_icon" ><img src="'. esc_url( get_field('faqs_tax_icon', $term ) ) .'" /></div>';
+            $returnhtml .= '<div class="cat_name" ><span>'. esc_html( $term->name ) .'</span></div>';
+            $returnhtml .= '</div></div>';
+
+        endforeach;
+
+    endif;
+
+        $returnhtml .= '</div>';//faqs_nav    
+    $returnhtml .= '</div>';//faqs_wrap    
+    $returnhtml .= '<div class="faqs">';
+
+    if ( $terms && !is_wp_error( $terms ) ) :
+        
+        foreach ( $terms as $term ) :
+
+            $faqs_args = array(  
+                'post_type' => 'faqs_type',
+                'posts_per_page' => 6, 
+                'post_status' => 'publish',
+                'orderby' => 'id',
+                'order' => 'asc',
+                'tax_query'      => array(
+                    array (
+                        'taxonomy' => 'faqs_cats',
+                        'field' => 'slug',
+                        'terms' =>$term->slug,
+                    )
+                )
+            );
+
+            $faqs = new WP_Query( $faqs_args );   
+
+            $returnhtml .= '<div id="'.esc_attr($term->slug).'" class="faqs_container">';
+
+                if( $faqs->have_posts()) :
+
+                    while ( $faqs->have_posts() ) : $faqs->the_post();
+
+                        $title = get_the_title();
+                        $content = get_the_content();
+
+                        $returnhtml .= '<div class="faqs_inner">';
+                            $returnhtml .= '<div class="faqs_row faqs_question"><span class="faqs_label">Q. </span><span class="faqs_title">' . $title . '</span></div>';
+                            $returnhtml .= '<div class="faqs_row faqs_answer"><span class="faqs_label">A. </span><span class="faqs_content">' . $content . '</span></div>';
+                        $returnhtml .= '</div>'; //faqs_inner
+
+                    endwhile;
+                    wp_reset_postdata();
+                
+                else:               
+                        
+                    $returnhtml .= '<p>'. esc_html('Sorry, no posts were found.' ) .'</p>';
+
+                endif;
+                
+            $returnhtml .= '</div>'; // faqs_container
+        endforeach;
+    endif;
+    
+    $returnhtml .= '</div>';//faqs
+
+    return $returnhtml;
+
+}
+add_shortcode('mbn_faqs', 'mbn_faqs_shortcode');

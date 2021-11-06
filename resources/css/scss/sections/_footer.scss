@@ -4,7 +4,7 @@
     background: $color-dark;
     font-size: 18px;
     font-weight: 300;
-    padding: 160px 0 60px;
+    padding: 100px 0 60px;
 
     * {
         color: $color-white;
@@ -12,7 +12,7 @@
 
     a {
         &:hover {
-            color: $color-primary;
+            color: $color-dblue;
         }
     }
 
@@ -20,6 +20,7 @@
         color: $color-primary;
         font-family: $heading-font-family;
         margin: 0;
+        font-weight: 600;
     }
     
     .button {
@@ -28,7 +29,7 @@
     }
 
     .foottop {
-        padding: 60px 0;
+        padding: 60px 0 30px;
 
         .logo figure{
             margin-bottom: 50px;
@@ -175,7 +176,6 @@
             }
         }
     }
-
     .copyright {
         float: left;
         color: #949494;

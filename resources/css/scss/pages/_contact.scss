@@ -76,6 +76,10 @@
             }
         }
     }
+
+    @include media (max-width, 425px){        
+        width: 80%;
+    }
 }
 
 .section_map {

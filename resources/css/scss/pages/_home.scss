@@ -108,12 +108,19 @@
 		}
 	}
 
+	@include media(max-width, 1440px) {
+		.hero-caption {
+			p {
+				font-size: 24px;
+			}
+		}
+	}
 	@include media(max-width, 1280px) {
 		.hero-caption {
 			padding: 100px 0 50px;
 
 			p {
-				font-size: 24px;
+				font-size: 20px;
 			}
 		}
 
@@ -358,6 +365,10 @@
 .section_testimonials {
 	padding: 115px 0;
 	position: relative;
+
+	.grid-container {
+		position: relative;
+	}
  
 	.section_title {
 
@@ -504,6 +515,17 @@
 
 	}
 
+	@include media (min-width,1921px) {
+
+		.col-bg {
+			top: -80px;
+		}
+			
+		.col-testi{
+			margin-right: 0 !important;		
+		}
+	}
+
 	@include media(max-width, 1440px){
 		.col-testi {
 			margin-right: -30px;
@@ -542,6 +564,11 @@
 		.testi_rating {
 			margin-bottom: 0;
 		}
+
+		.section_title {
+			letter-spacing: 0.1em;
+			text-align: center;
+		}
 	
 		.testi_item {
 			padding-right: 0 !important;
@@ -560,6 +587,43 @@
 			margin-right: 0 !important;
 			margin-left: 0 !important;
 		}
+	}
+
+	
+	@include media (max-width, 375px) {
+		
+		.reviews_info {
+			flex-direction: column;
+
+			.ratings_info {
+				margin-right: 0;
+			}
+		}
+
+		.testimonials{
+			.testi_excerpt,
+			.testi_name,
+			.testi_btn {
+				text-align: center;
+			}
+
+			.testi_rating {
+				margin: 0 auto 20px;		
+			}
+
+			.testi_slick {
+				.slick-arrow {
+					&.slick-next {						
+						left: auto;
+						right: 20%;
+					}
+					&.slick-prev {						
+						left: 20%;
+					}
+				}
+			}
+		}
+
 	}
 
 	@include media (max-width, 600px) {
@@ -589,6 +653,16 @@
 			&.slick-prev { 
     			left: 0;
 			}
+		}
+
+		.social_reviews {			
+					
+			.field_type-star_rating_field ul.star-rating {
+				
+				li {
+					margin-right: 3px !important;
+				}
+			}			
 		}
 	}
 

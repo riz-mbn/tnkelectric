@@ -3,9 +3,9 @@
 $field-height: 54px;
 $field-height-sm: 45px;
 
-::-moz-placeholder{color:#333;opacity:1;}
-:-ms-input-placeholder{color:#333;}
-::-webkit-input-placeholder{color:#333;}
+::-moz-placeholder{color:#BCBCBC;opacity:1;}
+:-ms-input-placeholder{color:#BCBCBC;}
+::-webkit-input-placeholder{color:#BCBCBC;}
 :focus::-webkit-input-placeholder {opacity:0.3;}
 :focus::-moz-placeholder {opacity:0.3;}
 :focus:-ms-input-placeholder {opacity:0.3;}
@@ -53,7 +53,13 @@ textarea {
 }
 textarea {
     resize: none;
-    height: auto;
+	height: $field-height !important;
+    overflow: hidden;
+
+    &:focus,
+    &:hover {
+        overflow: auto;
+    }
 }
 
 select {
@@ -287,12 +293,7 @@ select {
 
 
 //Gravity form custom
-textarea.small {
-	height: 150px;
-}    
-textarea.medium {
-	height: 200px;
-}    
+
 .fields {
 	.ginput_container_name {
 		display: flex; 
@@ -335,4 +336,49 @@ ul.gform_fields  {
             }
         }
     }
+}
+
+.gform_wrapper {
+    .gform_fields {
+        width: 100%;        
+        display: grid;
+        grid-column-gap: 2%;
+        grid-row-gap: 16px;
+        grid-template-columns: repeat(12,1fr);
+
+        .gfield {
+            grid-column: 1/1;
+
+            &.gfield--width-third {
+                grid-column: span 4;
+            }
+
+            &.gfield.gfield--width-full {
+                grid-column: span 12;
+            }
+
+
+        }
+    }
+    .gform_submission_error{
+        font-size: 18px;
+        padding: 10px;
+    }
+    .validation_message  {
+        padding: 5px;
+    }
+    .gform_submission_error,
+    .validation_message  {
+        font-weight: 400;
+        color: $color-alert;
+        background: rgba(255, 154, 154, 0.10);
+        border: 1px solid $color-alert;
+    }
+
+    @include media (max-width, 767px) {
+        .gform_fields {
+            display: block !important;
+        }
+    }
+
 }
