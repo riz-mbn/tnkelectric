@@ -140,7 +140,7 @@ get_header() ?>
         </div>
     </div>
 </section>
-<section class="section_testimonials">
+<section class="section_home_5">
     <div class="col-bg"><figure class="penta"><img src="<?php echo esc_url( MBN_ASSETS_URI . '/img/bgs/img-bg-s5.jpg', 'mbn_theme'); ?>" alt="" width="1227" height="729" /></figure></div>
     <div class="grid-container">   
         <h4 class="section_title"><?php _e('Customer Endorsements', 'mbn_theme'); ?></h4>
@@ -184,7 +184,7 @@ get_header() ?>
         </div>
     </div>
 </section>
-<section class="section_services_bottom">
+<section class="section_home_6">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell large-4 medium-6 small-12 col-image">

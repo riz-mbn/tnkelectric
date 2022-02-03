@@ -41,7 +41,9 @@ function mbn_theme_setup(){
     
 
     register_nav_menus(array(
+        'top-menu'   => 'Top Menu',
         'main-menu'   => 'Main Menu',
+        'services-menu'   => 'Services Menu',
         'footer-menu'   => 'Footer Menu',
         'mobile-menu'   => 'Mobile Menu',
     ));
@@ -97,11 +99,12 @@ function mbn_enqueue_scripts(){
     //wp_enqueue_style('fancybox', MBN_ASSETS_URI.'/vendor/fancybox/jquery.fancybox.min.css', [], $wp_version);
     //wp_enqueue_script('fancybox', MBN_ASSETS_URI.'/vendor/fancybox/jquery.fancybox.min.js', [], $wp_version);
     
-    // App
-    wp_enqueue_style('app', MBN_ASSETS_URI.'/css/app.css', [], '1.8.3');
-    wp_enqueue_script('app', MBN_ASSETS_URI.'/js/app.js', [], '1.0.0', true);
+	//Isotope	
+    wp_enqueue_script('fancybox', MBN_ASSETS_URI.'/vendor/isotope.pkgd.min.js', [], $wp_version);
     
-
+    // App
+    wp_enqueue_style('app', MBN_ASSETS_URI.'/css/app.css', [], '1.8.6197');
+    wp_enqueue_script('app', MBN_ASSETS_URI.'/js/app.js', [], '1.0.9947', true);
 
     // localize objects
     wp_localize_script('app', 'main_obj', array(

@@ -1,7 +1,4 @@
 <?php 
-/**
- * Template Name: Contact Us Page template
- */
 get_header() ?>
 <section class="section_page_header contact_header text-center">
     <figure class="bg"><img src="<?php echo esc_url( MBN_ASSETS_URI . '/img/bgs/img-bg-contact.png', 'mbn_theme'); ?>" alt="" width="1920" height="246" /></figure>
@@ -22,12 +19,12 @@ get_header() ?>
                         </div>
                         <div class="media-body"><span class="media-heading"><?php _e('(602) 497-1754', 'mbn_theme'); ?></span></div>
                     </a>                
-                    <a href="mailto:tdo@tnkelectric.com" class="contact_item contact_email" >
+                    <a href="mailto:info@tnkelectric.com" class="contact_item contact_email" >
                         <div class="media-left">
                             <figure class=""><img src="<?php echo esc_url( MBN_ASSETS_URI . '/img/icon/icn-email.svg', 'mbn_theme'); ?>" alt="" width="19" height="19" /></figure>
                         </div>
                         <div class="media-body">
-                            <span class="media-heading"><?php _e('tdo@tnkelectric.com', 'mbn_theme'); ?></span>
+                            <span class="media-heading"><?php _e('info@tnkelectric.com', 'mbn_theme'); ?></span>
                         </div>
                     </a>                  
                     <a href="<?php esc_url('https://g.page/TNKElectric?share', 'mbn_theme');?>" class="contact_item contact_address" >

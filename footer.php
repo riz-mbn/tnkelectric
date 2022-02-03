@@ -1,5 +1,4 @@
 
-
     </main>
     
     <footer id="footer" class="footer">
@@ -20,22 +19,20 @@
                             </div>
                             <div class="find_us">
                                 <h4 class="col-title"><?php _e('Find Us', 'mbn_theme'); ?></h4>
-                                <a href="<?php esc_url('https://g.page/TNKElectric?share', 'mbn_theme');?>">
-                                    <?php _e('T & K Electri', 'mbn_theme'); ?>c<br/>
-                                    <?php _e('2618 N 31st St', 'mbn_theme'); ?><br/>
-                                    <?php _e('Phoenix, AZ 85008', 'mbn_theme'); ?>
-                                </a>
+                                <?php _e('T & K Electri', 'mbn_theme'); ?>c<br/>
+                                <?php _e('42587 N Suburban Ave', 'mbn_theme'); ?><br/>
+                                <?php _e('San Tan Valley, AZ 85140', 'mbn_theme'); ?>
                             </div>
                         </div>
                         <div class="information_2">
                             <div class="email_us">
                                 <h4 class="col-title"><?php _e('Email Us', 'mbn_theme'); ?></h4>
-                                <a href="mailto:tdo@tnkelectric.com"><?php _e('tdo@tnkelectric.com', 'mbn_theme'); ?></a>
+                                <a href="mailto:info@tnkelectric.com"><?php _e('info@tnkelectric.com', 'mbn_theme'); ?></a>
                             </div>
                             <div class="follow_us">
                                 <h4 class="col-title"><?php _e('Connect', 'mbn_theme'); ?></h4>
                                 <div class="social_icons">
-                                    <a href="<?php echo esc_url('https://www.instagram.com/', 'mbn_theme'); ?>">
+                                    <a href="<?php echo esc_url('https://instagram.com/tnkelectric?utm_medium=copy_link', 'mbn_theme'); ?>">
                                         <figure>
                                             <img src="<?php echo MBN_ASSETS_URI ?>/img/icon/icn-ig.svg" alt="Instagram" width="24" height="24"/>
                                         </figure>
@@ -52,12 +49,15 @@
                     <div class="cell xlarge-3 xlarge-offset-1 large-4 medium-6 footer_menu">
                         <div class="menu_1">
                             <h5 class="fw-normal">Services</h5>
-                            <ul class="services_menu">
-                                <li><a href="<?php echo home_url() ?>/residential-solar-services">Residential Solar Services</a></li>
-                                <li><a href="<?php echo home_url() ?>/commercial-solar-services">Commercial Solar Services</a></li>
-                                <li><a href="<?php echo home_url() ?>/multifamily-solar-services">Multifamily Solar Services</a></li>
-                                <li><a href="<?php echo home_url() ?>/electrical-solar-services">Electrical Solar Services</a></li>
-                            </ul>
+                            <?php
+                                    wp_nav_menu( array( 
+                                        'theme_location' => 'services-menu',
+                                        'menu'         => '',
+                                        'container'    => 'ul',
+                                        'items_wrap' => '<ul class="services_menu vertical">%3$s</ul>' ,
+                                        'menu_class'   => 'services_menu vertical',
+                                    ));
+                                ?> 
                         </div>
                         <div class="menu_2">
                             <?php

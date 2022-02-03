@@ -6,6 +6,38 @@
 	position: relative;
     z-index: 1;
 
+			
+	&.hero-caption {
+		h1{
+			margin-bottom: 0;
+			&.typewriter {
+				a:hover {
+					color: #29BCFC;
+				}
+			}
+			
+			
+			@include media (max-height, 639px) {
+				&.typewriter {
+					height: 40px;
+				}
+			}
+
+		}
+	}
+
+	&.hide-for-large {
+		.typewriter {
+			height: 60px;
+		}
+	}
+
+	&.show-for-large {
+		.typewriter {
+			height: 67px;
+		}
+	}
+
 	&:before {
 		content: '';
 		position: absolute;
@@ -363,11 +395,13 @@
 
 }
 .section_testimonials {
-	padding: 115px 0;
+	padding: 80px 0;
 	position: relative;
 
 	.grid-container {
 		position: relative;
+		margin-right: 0;
+		max-width: 1625px;
 	}
  
 	.section_title {
@@ -394,8 +428,9 @@
 	}
 
 	.col-testi{
-		margin-right: calc((-100vw - -1440px) / 2);
-    	margin-left: 90px;
+		// margin-right: calc((-100vw - -1440px) / 2);
+    	// margin-left: 90px;
+    	margin-left: 10px;
 	
 	}
 	
@@ -413,10 +448,37 @@
 		.testi_name {
 			font-weight: 600;
 		}
+		.testi_btn{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			a.button{
+				margin-bottom: 0;
+			}
+			
+			.slick-arrow {
+				right: auto;
+				top: 40px;
+				border: 1px solid #000 !important;
+				padding: 44px;
+				opacity: 1;
+				border-radius: 50px;
+				position: unset;
+				transform: none;
+				&.slick-next {			
+					left: 100px;
+				}
+		
+				&.slick-prev {
+					left: 0;
+					margin-right: 10px;
+				}
+			}
+		}
 	
 		.testi_item {
-			padding-right: 48px;
-			padding-left: 48px;
+			padding-right: 35px;
+			padding-left: 35px;
 			display: flex;	
 			flex-direction: column;		
 		}
@@ -424,9 +486,10 @@
 		.testi_slick {
 			
 			&.slick-slider {
-				position: unset;
+				// position: unset;
 				padding-left: 0;
 				padding-right: 0;
+				padding-bottom: 40px;
 			}
 
 			.testi_wrap.slick-slide{
@@ -437,22 +500,6 @@
 					}
 				}
 				
-			}
-			.slick-arrow {
-				right: auto;
-				top: 40px;
-				border: 1px solid #000 !important;
-				padding: 44px;
-				opacity: 1;
-				border-radius: 50px;
-	
-				&.slick-next {			
-					left: 100px;
-				}
-		
-				&.slick-prev {
-					left: 0;
-				}
 			}
 		}
 	}
@@ -471,10 +518,10 @@
 	}
 
 	.reviews_info {
-		margin-top: 30px;
+		// margin-top: 30px;
 		display: flex;
-		align-items: center;
 		flex-direction: column;
+		align-items: flex-start;
 		justify-content: flex-end;
 
 		h1{
@@ -515,32 +562,40 @@
 
 	}
 
+	@include media (max-width, 1625px) {
+	
+		.grid-container {
+			margin-left: auto;
+    		margin-right: auto;
+			max-width: 1500px;
+		}
+	
+	}
+	
 	@include media (min-width,1921px) {
 
-		.col-bg {
-			top: -80px;
-		}
+		// .col-bg {
+		// 	top: -80px;
+		// }
 			
 		.col-testi{
 			margin-right: 0 !important;		
 		}
 	}
 
-	@include media(max-width, 1440px){
-		.col-testi {
-			margin-right: -30px;
-		}
-	}
 
 	@include media (min-width, 1024px) {
 		.testi_slick {
 			.testi_wrap.slick-slide{
-
-				&.slick-current {
-					width: 652px !important;	
-				}
-				
+				width: 628px;
+				// &.slick-current {
+				// 	width: 652px !important;	
+				// }			
 			}
+		}	
+
+		.testimonials{
+			padding-left: 50px;
 		}
 	}
 
@@ -549,10 +604,11 @@
 
 		.reviews_info {
 			flex-direction: row;
+			justify-content: center;
+			margin-bottom: 30px;
 
 			.ratings_info {
-				display: flex;
-				margin-right: 50px;
+				display: flex;				
 				flex-direction: column;
 				align-items: center;
 
@@ -568,6 +624,7 @@
 		.section_title {
 			letter-spacing: 0.1em;
 			text-align: center;
+			margin-bottom: 30px;
 		}
 	
 		.testi_item {
@@ -582,19 +639,57 @@
 				top: 20%!important;
 			}
 		}
+		.testimonials {
+			.testi_btn{
+				.slick-arrow {
+					padding: 30px !important;
+				}
+			}
+		}
 
 		.col-testi {
 			margin-right: 0 !important;
 			margin-left: 0 !important;
 		}
 	}
-
+	@include media (max-width, 639px) {
+		.testimonials {
+			.testi_slick{
+				&.slick-slider{
+					padding-bottom: 0;
+				}
+			}
+			.testi_btn{
+				flex-direction: column-reverse;
+				align-items: flex-start;
+				.slider-arrows{
+					padding: 0 0 20px;
+				}
+				.slick-arrow {
+					top: auto !important;
+					bottom: 70px;
+				}
+			}
+		}
+	}
 	
+	@include media (max-width, 413px) {
+		.testimonials{
+			.testi_btn {
+				align-items: center;
+				a.button{
+					width: 100%;
+				}
+			}
+		}
+	}
+
 	@include media (max-width, 375px) {
 		
 		.reviews_info {
 			flex-direction: column;
-
+			align-items: center;
+			margin-bottom:30px;
 			.ratings_info {
 				margin-right: 0;
 			}
@@ -627,12 +722,6 @@
 	}
 
 	@include media (max-width, 600px) {
-		.reviews_info {
-			justify-content: flex-start;
-			margin-bottom:30px;
-		}
-
-		
 		.testi_slick {
 			position: relative;
 
@@ -640,11 +729,6 @@
 				margin-bottom: 100px;
 			}
 			
-			.slick-arrow {
-				padding: 30px !important;
-				top: auto !important;
-				bottom: 70px;
-			}
 	
 			&.slick-next {			
 				left: 60px !important;

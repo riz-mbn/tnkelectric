@@ -18,3 +18,24 @@ section {
 		padding: 40px 0!important;
 	}
 }
+
+.page:not(.home) {
+
+    .content {
+        padding-top: 116px;
+    }
+
+	@include media(max-width, 1600px){
+        .content {
+            padding-top: 112px;
+        }
+        
+	}
+
+	@include media(max-width, 1023px){
+        .content {
+            padding-top: 100px;
+        }
+        
+	}
+}

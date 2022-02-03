@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Services Page template
+ * Template Name: Testimonials Page template
  */
 get_header() ?>
 
